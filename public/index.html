@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Blead Breaks CPAN Matrix</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="css/uniform.css" />
+<link rel="stylesheet" href="css/select2.css" />
+<link rel="stylesheet" href="css/matrix-style.css" />
+<link rel="stylesheet" href="css/matrix-media.css" />
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<!--Header-part-->
+<div id="header">
+  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+</div>
+<!--close-Header-part--> 
+
+<!--top-Header-menu-->
+<div id="user-nav" class="navbar navbar-inverse">
+  <ul class="nav">
+    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-external-link"></i> <span class="text">Test Tools</span> <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a class="sAdd" title="" href="http://cpantesters.org"><i class="icon-link"></i> cpantesters.org</a></li>
+        <li class="divider"></li>
+        <li><a class="sAdd" title="" href="http://matrix.cpantesters.org"><i class="icon-link"></i> matrix.cpantesters.org</a></li>        
+        <li class="divider"></li>
+        <li><a class="sAdd" title="" href="http://perl.develop-help.com/?b=blead"><i class="icon-link"></i> perl.develop-help.com</a></li>
+        <li class="divider"></li>
+        <li><a class="sAdd" title="" href="https://tux.nl/perl5/smoke/index.html"><i class="icon-link"></i> tux.nk/perl5/smoke/</a></li>        
+      </ul>
+    </li>
+    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <li class=""><a title="" href="#"><i class="icon icon-info-sign"></i> <span class="text">About</span></a></li>
+  </ul>
+</div>
+
+<!--sidebar-menu-->
+
+<div id="sidebar"> <a href="#" class="visible-phone"><i class="icon icon-th"></i>Tables</a>
+  <ul>
+    <li><a href="index.html"><i class="icon icon-home"></i> <span>Meta Matrix</span></a> </li>
+    <li><a href="index.html"><i class="icon icon-map-marker"></i> <span>CPAN River</span></a> </li>
+  </ul>
+</div>
+
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> </div>
+    <h1><b>B</b>leads <b>B</b>reaks <b>C</b>PAN</h1>
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Blead Breaks CPAN matrix</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th width="50">perl version</th>
+                  <th width="70%">status</th>
+                  <th># Platforms</th>
+                  <th>Success</th>
+                  <th>Failure</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="odd">
+                  <td>5.27.11</td>
+                  <td>
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 98%;"></div>
+                       <div class="bar bar-warning" style="width: 1%;"></div>
+                       <div class="bar bar-danger" style="width: 1%;"></div>
+                    </div>
+                  </td>
+                  <td>12</td>
+                  <td class="center">4</td>
+                  <td class="center">3</td>
+                </tr>
+                <tr class="even gradeC">
+                  <td>5.27.10</td>
+                  <td>                    
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 98%;"></div>
+                       <div class="bar bar-danger" style="width: 2%;"></div>
+                    </div>
+                  </td>
+                  <td>12</td>
+                  <td class="center">5</td>
+                  <td class="center">2</td>
+                </tr>
+                <tr class="odd gradeA">
+                  <td>5.27.9</td>
+                  <td>                    
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 95%;"></div>
+                       <div class="bar bar-danger" style="width: 5%;"></div>
+                    </div>
+                  </td>
+                  <td>12</td>
+                  <td class="center">5</td>
+                  <td class="center">2</td>
+                </tr>
+                <tr class="even gradeA">
+                  <td>5.27.8</td>
+                  <td>                    
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 97%;"></div>
+                       <div class="bar bar-warning" style="width: 2%;"></div>
+                       <div class="bar bar-danger" style="width: 1%;"></div>
+                    </div>
+                  </td>
+                  <td>10</td>
+                  <td class="center">6</td>
+                  <td class="center">1</td>
+                </tr>
+                <tr class="even gradeA">
+                  <td>5.27.8</td>
+                  <td>
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 99%;"></div>
+                       <div class="bar bar-danger" style="width: 1%;"></div>
+                    </div>
+                  </td>
+                  <td>8</td>
+                  <td class="center">6</td>
+                  <td class="center">0</td>
+                </tr>
+                <tr class="even gradeA">
+                  <td>5.26.1</td>
+                  <td>
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 93%;"></div>
+                       <div class="bar bar-warning" style="width: 2%;"></div>
+                       <div class="bar bar-danger" style="width: 5%;"></div>
+                    </div>                    
+                  </td>
+                  <td>7</td>
+                  <td class="center">6</td>
+                  <td class="center">0</td>
+                </tr>
+                <tr class="even gradeA">
+                  <td>5.24.2</td>
+                  <td>
+                    <div class="progress" style="height: 15px; margin: 0px;">
+                       <div class="bar bar-success" style="width: 100%;"></div>
+                    </div>                    
+                  </td>
+                  <td>9</td>
+                  <td class="center">1</td>
+                  <td class="center">0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--Footer-part-->
+<div class="row-fluid">
+  <div id="footer" class="span12">2018 <b>B</b>lead <b>B</b>reaks <b>C</b>PAN</div>
+</div>
+<!--end-Footer-part-->
+<script src="js/jquery.min.js"></script> 
+<script src="js/jquery.ui.custom.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.uniform.js"></script> 
+<script src="js/select2.min.js"></script> 
+<script src="js/jquery.dataTables.min.js"></script> 
+<script src="js/matrix.js"></script> 
+<script src="js/matrix.tables.js"></script>
+</body>
+</html>
