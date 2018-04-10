@@ -5,6 +5,8 @@ package bbc;
 use strict;
 use warnings;
 
+use v5.026;
+
 our $VERSION = '0.01';
 
 use FindBin;
@@ -12,6 +14,18 @@ BEGIN { unshift @INC, "$FindBin::Bin/lib" }
 
 use Mojolicious::Lite;
 use Mojolicious::Commands;
+
+use BBC ();
+
+our $APP = app();
+
+app->moniker('bbc');
+app->plugin('DebugDumperHelper');
+
+push @{ app->commands->namespaces }, 'BBC::Commands';
+
+our $cfg = app->plugin('Config');
+helper bbc => sub { state $bbc = BBC->new( cfg => $cfg ) };
 
 # Documentation browser under "/perldoc"
 #plugin 'PODRenderer';
