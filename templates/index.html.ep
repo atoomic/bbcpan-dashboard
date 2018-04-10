@@ -11,10 +11,10 @@
       <div class="span8">
 
        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <div onClick="$('#filters').toggle();" class="widget-title" style="cursor:pointer;"> <span class="icon"> <i class="icon-align-justify"></i> </span>
             <h5>Adjust Filters</h5>
           </div>
-          <div class="widget-content nopadding">
+          <div id="filters" class="widget-content nopadding" style="display:none;">
             <form action="#" method="get" class="form-horizontal">
             <div class="control-group">
               <label class="control-label">Select Perl Version</label>
@@ -43,27 +43,7 @@
               </div>
             </form>
           </div>
-        </div>
-
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-            <h5>blead Breaks CPAN matrix</h5>
-          </div>
-
-          <div class="widget-content nopadding">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th width="50">River Score</th>
-                  <th>Distro</th>
-                  <th>5.27.10</th>
-                  <th>5.27.9</th>
-                  <th>5.26.2</th>
-                  <th>5.24.3</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
+        </div> <!-- end widget box --> 
 
 % my @state = ( 
 %	[ 1, 0, 0, 0, 'Reported RT #123'],
@@ -73,7 +53,25 @@
 %	[ 0, 1, 0, 0],
 % );
 
-% for ( 0..10 ) { 
+	<div class="widget-box">
+          <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
+            <h5>blead Breaks CPAN matrix</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table id="bbctable" class="table table-bordered xdata-table">
+              <thead>
+                <tr>
+                  <th>River Score</th>
+                  <th>Distro</th>
+                  <th>5.27.10</th>
+                  <th>5.27.9</th>
+                  <th>5.26.2</th>
+                  <th>5.24.3</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+% for ( 0..150 ) { 
 % my $s = $state[ $_ % $#state ];
                 <tr>
                   <td class="right">432</td>
@@ -90,7 +88,7 @@
                   <td class="center">
         
         			<div class="btn-group">
-		              <button data-toggle="dropdown" class="btn dropdown-toggle"><%= $s->[4] // "Report this" %> <span class="caret"></span></button>
+		              <button data-toggle="dropdown" class="btn dropdown-toggle" style="padding: 1px 4px 1px 4px;"><%= $s->[4] // "Report this" %> <span class="caret"></span></button>
 		              <ul class="dropdown-menu">
 		                <li><a href="#">open RT case</a></li>
 		                <li><a href="#">open CPAN case</a></li>
@@ -104,8 +102,21 @@
               </tbody>
             </table>
           </div>
-        </div>
+        </div> <!-- end widget box -->
 
-      </div>
-    </div>
-  </div>
+      </div> <!-- span -->
+    </div> <!-- row fluid -->
+  </div> <!-- container-fluid -->
+
+  <script type="text/javascript">
+  // https://datatables.net/manual/options
+        $('#bbctable').dataTable({
+            "searching": true,
+            "lengthMenu": [ 10, 25, 50, 75, 100 ],
+            "pageLength": 50,
+            "ordering": true,
+            "bJQueryUI": true,
+            "sPaginationType": "full_numbers",
+            "sDom": '<""l>t<"F"fp>'
+        });
+  </script>
