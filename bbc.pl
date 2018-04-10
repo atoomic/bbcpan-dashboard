@@ -42,6 +42,18 @@ get '/cpan-river' => sub {
   $c->render( template => 'cpan-river' );	
 };
 
+get '/view-reports/:distro' => sub {
+	my $c = shift;
+
+	$c->render( template => 'view-report' );	
+};
+
+get '/view-reports' => sub {
+	my $c = shift;
+
+	$c->redirect_to('/');
+};
+
 app->start;
 __DATA__
 
