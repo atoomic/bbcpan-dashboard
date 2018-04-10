@@ -37,6 +37,8 @@ get '/' => sub {
 
 get '/cpan-river' => sub {
   my $c = shift;
+
+  $c->stash( cpan_river => $c->bbc->get_cpan_river( limit => 100 ) );
   $c->render( template => 'cpan-river' );	
 };
 

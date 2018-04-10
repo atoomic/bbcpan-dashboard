@@ -1,7 +1,9 @@
 % layout 'default';
+% title "CPAN River";
 
   <div id="content-header">
     <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> </div>
-    <h1><b>b</b>lead <b>B</b>reaks <b>C</b>PAN</h1>
+    <h1>CPAN River</h1>
   </div>
+
   

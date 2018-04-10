@@ -68,28 +68,6 @@ sub reset_database {
     return $self->pg->migrations->migrate(0)->migrate;
 }
 
-sub create_build {
-    my ( $self, $options ) = @_;
-
-    return unless ref $options eq 'HASH';
-
-    $self->repair(1);    # auto repair when adding new build - use force option as we want to run it for every new build
-
-    return $self->pg->db->query(
-        "insert into Bbc_builds
-       (build_number, state, total_jobs, priority, perl_major, created_by, build_type, updated_at, created_at)
-     values (?, ?, ?, ?, ?, ?, ?, now(), now())
-     returning id",
-        $options->{build_number} // 1,
-        $options->{state}        // $self->STATE_PENDING,
-        $options->{total_jobs}   // 0,
-        $options->{priority}     // $self->PRIORITY_DEFAULT,
-        $options->{perl_major}   // 0,
-        $options->{ipaddr}       // '127.0.0.1',
-        $options->{build_type}
-    )->hash->{id};
-}
-
 sub repair {
     my ( $self, $force ) = @_;
 

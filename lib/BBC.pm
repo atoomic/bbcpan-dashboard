@@ -47,4 +47,22 @@ sub new {
     return $self;
 }
 
+sub get_cpan_river {
+	my ( $self, %opts ) = @_;
+
+	my $limit = $opts{limit} // 100;
+
+	# https://metacpan.org/pod/SQL::Abstract::Pg
+
+	return $self->backend->select( 
+		'cpan_river', '*', 
+		{ is_top_1000 => 1 }, 
+		{ 
+			order_by => {-desc => 'counter'},
+		 	limit => $limit 
+		} 
+	)->hashes;
+
+}
+
 1;
